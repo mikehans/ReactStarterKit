@@ -1,0 +1,38 @@
+/* 
+    A note on CSS Resets
+    Add any required CSS Resets here if required. I'm working from the position that they're largely not required
+    However, some may be necessary.
+    Suggested references:
+        - https://github.com/vladocar/CSS-Mini-Reset/blob/master/CSS-Mini-Reset.css
+        - https://github.com/necolas/normalize.css/blob/master/normalize.css
+*/
+:global(html){
+    line-height: 1.15;
+}
+:global(body) {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+:global(h1){
+    font-size: 2em;
+}
+
+/* Include the following if required */
+/* :global(h2){} */
+
+/* :global(h3){} */
+
+/* :global(h4){} */
+
+/* :global(h5){} */
+
+/* :global(h6){} */
+
+/* :global(table){
+    border-spacing: 0;
+    border-collapse: collapse;
+} */
+
+/* ============================== END GLOBALS ============================== */

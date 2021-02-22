@@ -18,6 +18,7 @@ module.exports = {
     },
     "files": false,
     "watchEvents": [
+        "add",
         "change"
     ],
     "watch": true,
@@ -28,8 +29,6 @@ module.exports = {
     },
     "server": "dist",
     "proxy": false,
-    "port": 3000,
-    "middleware": false,
     "serveStatic": [],
     "ghostMode": {
         "clicks": true,

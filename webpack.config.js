@@ -1,10 +1,15 @@
-var webpack = require('webpack');
+/* eslint "@typescript-eslint/no-var-requires": "off" */
+/*
+    eslint: turning off this no-var-requires is just to get it working right now.
+    TBD: Remove and update code
+*/
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+// var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.ts',
+    entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
@@ -12,12 +17,12 @@ module.exports = {
         library: 'MH'
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.tsx', '.js', '.json' ]
     },
     module: {
         rules: [
             {
-                test: /\.(ts|js)$/,
+                test: /\.(ts|js|jsx|tsx)$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
             },
@@ -31,12 +36,18 @@ module.exports = {
                         options: {
                             modules: true
                         }
-                    }
+                    },
+                    { loader: 'postcss-loader' }
                 ]
             }
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin(),
+        // new BrowserSyncPlugin({
+        //     host: 'localhost',
+        //     port: 3003,
+        //     server: {baseDir: ['public']}
+        // })
     ]
 };
